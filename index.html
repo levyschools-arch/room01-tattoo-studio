@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#d8d8d4" />
+    <meta name="description" content="ROOM/01 is a fictional tattoo studio concept by PeakVision." />
+    <title>ROOM/01 | Tattoo Studio Concept</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261002a" />
+    <link rel="stylesheet" href="booking-experience.css?v=20261001k" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="ROOM/01 home"><span class="door-mark" aria-hidden="true"><i></i></span><span>ROOM<span class="slash">/</span>01</span></a>
+      <span class="concept-tag">CONCEPT BY PEAKVISION</span>
+      <nav aria-label="Main navigation">
+        <a class="nav-book" href="#booking">Book a session <span aria-hidden="true">GO</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="cover" id="top" aria-label="ROOM/01 concept cover">
+        <div class="cover-stage" data-cover-stage>
+          <div class="cover-line-field" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <figure class="cover-art" data-crumble-frame>
+            <div class="sculpture-art" aria-label="Male and female tattooed marble sculptures with butterflies, sun and orbit lines">
+              <img class="orbit-backdrop" src="assets/room01-orbit-ink.webp" alt="" aria-hidden="true" />
+              <img class="sculpture-foreground" src="assets/room01-sculptures.png" alt="Male and female classical sculptures with tattoos" />
+              <span class="orbit-star star-a" aria-hidden="true">✦</span>
+              <span class="orbit-star star-b" aria-hidden="true">✦</span>
+            </div>
+            <figcaption><span>FIG. 01</span><span>INK / FORM / BODY</span></figcaption>
+          </figure>
+          <div class="butterfly-field" aria-hidden="true"></div>
+          <div class="cover-lockup"><h1>ROOM<span>/</span>01</h1><p>INK WITH INTENTION.</p></div>
+          <div class="scroll-cue" aria-hidden="true"><span>SCROLL</span><i></i></div>
+          <div class="cover-bottom"><span>CONCEPT BY PEAKVISION / FICTIONAL STUDIO</span><span>SCROLL TO ENTER</span></div>
+        </div>
+      </section>
+
+      <section class="entry-film" id="studio-entry" aria-label="Scroll through the ROOM/01 studio">
+        <div class="entry-film-sticky">
+          <div class="entry-scene-host" data-scene="film" role="img" aria-label="Walking from the street through the ROOM/01 door to the tattoo flash wall, where the two artists hang in frames"></div>
+          <div class="entry-film-caption"><span>ROOM/01 / ENTER</span><span data-film-hint>SCROLL THROUGH THE STUDIO</span></div>
+          <div class="entry-film-progress" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <dialog class="artist-card-dialog" aria-labelledby="artist-card-name">
+        <div class="artist-card" data-artist-card>
+          <div class="artist-card-face artist-card-front">
+            <button type="button" class="artist-card-close" data-card-close aria-label="Close">CLOSE</button>
+            <img class="artist-card-portrait" data-card-portrait src="" alt="" />
+            <div class="artist-card-body">
+              <p class="artist-card-label" data-card-index></p>
+              <h3 id="artist-card-name" data-card-name></h3>
+              <p class="artist-card-style" data-card-style></p>
+              <p class="artist-card-note" data-card-note></p>
+              <button type="button" class="artist-card-flip" data-card-flip>SEE MY STYLES <span aria-hidden="true">TURN</span></button>
+              <p class="artist-card-fiction">Nova and Hiro are fictional artist studies created for this concept.</p>
+            </div>
+          </div>
+          <div class="artist-card-face artist-card-back">
+            <button type="button" class="artist-card-close" data-card-close aria-label="Close">CLOSE</button>
+            <div class="artist-card-body">
+              <p class="artist-card-label" data-card-studies></p>
+              <h4 data-card-style-back></h4>
+            </div>
+            <img class="artist-card-flash" data-card-flash src="" alt="" />
+            <div class="artist-card-actions">
+              <a class="artist-card-choose" data-card-choose href="#booking"></a>
+              <button type="button" class="artist-card-unflip" data-card-flip>TURN BACK</button>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+<section class="booking booking-experience" id="booking" aria-labelledby="booking-title">
+  <div class="booking-studio">
+    <p class="eyebrow">04 / YOUR NEXT PIECE</p>
+    <h2 id="booking-title">WHAT ARE<br />YOU <em>THINKING?</em></h2>
+    <p class="booking-lead">Free consultation.<br />Take your time. No commitment.</p>
+    <div class="booking-live-brief" aria-live="polite" aria-atomic="true">
+      <p data-booking-live-title>YOUR PIECE STARTS HERE.</p>
+      <span data-booking-live-detail>Choose a direction. We can work out the rest together.</span>
+    </div>
+  </div>
+
+  <div class="booking-planner">
+    <div class="booking-planner-top"><span>BUILD YOUR SESSION</span><span data-booking-step-count>01 / 04</span></div>
+    <div class="booking-routes" role="group" aria-label="Choose how to start"><button type="button" data-route="guided" aria-pressed="true"><strong>Explore my tattoo</strong><span>Placement, size and a price guide</span></button><button type="button" data-route="quick" aria-pressed="false"><strong>Just a conversation</strong><span>Go straight to a free consultation</span></button></div>
+    <nav class="booking-steps" aria-label="Appointment steps">
+      <button type="button" data-booking-goto="0" aria-current="step"><span>01</span> Direction</button>
+      <button type="button" data-booking-goto="1" disabled><span>02</span> Placement</button>
+      <button type="button" data-booking-goto="2" disabled><span>03</span> Session</button>
+      <button type="button" data-booking-goto="3" disabled><span>04</span> Your idea</button>
+    </nav>
+
+    <form id="room01-booking-form" novalidate>
+      <div class="booking-step" data-booking-step="0">
+        <h3 tabindex="-1">What's your direction?</h3>
+        <p class="booking-step-intro">Start with a style. Your artist will help shape the details.</p>
+        <fieldset class="booking-choice-set" data-booking-choice="style"><legend>THE STYLE</legend>
+          <div class="booking-style-options">
+            <button type="button" class="booking-choice" data-value="Fine line" aria-pressed="false"><svg viewBox="0 0 60 48" fill="none" aria-hidden="true"><path d="M30 44 V6 M30 17 C19 17 14 12 13 6 C24 4 29 8 30 17 M30 26 C42 26 48 19 47 13 C35 13 30 18 30 26 M30 36 C18 36 12 30 14 24 C25 24 30 30 30 36" stroke="currentColor" stroke-width="1"/></svg><span>Fine line<small>Less ink. Every detail.</small></span></button>
+            <button type="button" class="booking-choice" data-value="Blackwork" aria-pressed="false"><svg viewBox="0 0 60 48" aria-hidden="true"><path d="M30 2 L36 16 L53 10 L44 26 L57 35 L39 36 L30 48 L24 34 L7 39 L15 24 L3 14 L22 14 Z" fill="currentColor"/></svg><span>Blackwork<small>Bold. Graphic. Yours.</small></span></button>
+            <button type="button" class="booking-choice" data-value="Ornamental" aria-pressed="false"><svg viewBox="0 0 60 48" fill="none" aria-hidden="true"><path d="M30 3 C46 17 49 27 30 44 C11 27 14 17 30 3 Z M30 11 C40 21 41 28 30 37 C19 28 20 21 30 11 Z M5 24 H55 M30 1 V47" stroke="currentColor"/><circle cx="30" cy="24" r="3" fill="currentColor"/></svg><span>Ornamental<small>Pattern with purpose.</small></span></button>
+            <button type="button" class="booking-choice" data-value="Illustrative" aria-pressed="false"><svg viewBox="0 0 60 48" fill="none" aria-hidden="true"><path d="M6 25 Q30 1 54 25 Q30 47 6 25 Z M6 25 Q30 9 54 25 M16 14 L12 8 M26 9 L25 3 M37 10 L40 4 M47 15 L53 10" stroke="currentColor"/><circle cx="30" cy="25" r="9" stroke="currentColor"/><circle cx="30" cy="25" r="4" fill="currentColor"/></svg><span>Illustrative<small>A story in the lines.</small></span></button>
+          <button type="button" class="booking-choice" data-value="Custom" aria-pressed="false"><span>Custom<small>Your own direction</small></span></button>
+          </div>
+        </fieldset>
+        <label data-custom-detail hidden>Tell us about your custom idea<textarea name="customIdea" rows="2" maxlength="1000" placeholder="A subject, reference or something you have in mind"></textarea></label>
+        <fieldset class="booking-choice-set" data-booking-choice="artist"><legend>YOUR ARTIST</legend>
+          <div class="booking-artist-options">
+            <button type="button" class="booking-choice" data-value="Nova" aria-pressed="false"><span>Nova<small>Fine line / Ornamental</small></span></button>
+            <button type="button" class="booking-choice" data-value="Hiro" aria-pressed="false"><span>Hiro<small>Blackwork / Illustrative</small></span></button>
+            <button type="button" class="booking-choice" data-value="Choose for me" aria-pressed="false"><span>Find my match<small>Let the idea decide</small></span></button>
+          </div>
+        </fieldset>
+        <div class="artist-matcher" data-matcher hidden>
+          <h4>Find a starting point.</h4><p>Three optional questions based on our artists' example work.</p>
+          <fieldset data-match="weight"><legend>Which lines feel like you?</legend><button type="button" data-answer="delicate" aria-pressed="false">Delicate and light</button><button type="button" data-answer="bold" aria-pressed="false">Bold and graphic</button></fieldset>
+          <fieldset data-match="subject"><legend>What draws your eye?</legend><button type="button" data-answer="botanical" aria-pressed="false">Botanical or ornamental</button><button type="button" data-answer="illustrative" aria-pressed="false">Illustration or symbols</button><button type="button" data-answer="outside" aria-pressed="false">Colour or realism</button></fieldset>
+          <fieldset data-match="readiness"><legend>Where is your idea now?</legend><button type="button" data-answer="ready" aria-pressed="false">I have a reference</button><button type="button" data-answer="explore" aria-pressed="false">I want to explore</button></fieldset>
+          <p data-match-result role="status">Pick the answers that feel right. You can skip this any time.</p><button type="button" data-match-accept hidden>Use this suggestion</button><button type="button" data-match-skip>Skip matching and discuss it together</button>
+        </div>
+      </div>
+
+      <div class="booking-step" data-booking-step="1" hidden>
+        <h3 tabindex="-1">Where will it live?</h3>
+        <p class="booking-step-intro">Choose a place and a rough size. Nothing is final yet.</p>
+      <div class="placement-workbench">    <div class="booking-study">
+      <div class="body-views" role="group" aria-label="Body view"><button type="button" data-body-view="front" aria-pressed="true">Front</button><button type="button" data-body-view="back" aria-pressed="false">Back</button></div><span class="booking-study-index">BODY STUDY / <span data-booking-study-label>YOUR CANVAS</span></span>
+      <svg aria-label="Select a tattoo placement on the anatomical drawing" class="booking-body" viewBox="0 0 280 330" fill="none">
+        <g stroke="currentColor" stroke-width="1.05">
+          <path d="M123 44 C112 34 113 12 127 7 C144 1 159 14 153 33 L148 45 M123 44 L120 56 C107 63 87 64 77 74 C68 85 66 104 63 122 L45 186 L56 191 L87 135 L91 112 L94 176 C94 201 86 225 83 249 L81 302 L95 308 L110 263 L122 213 L134 208 L145 257 L155 307 L172 303 L168 245 L155 175 L157 111 L164 138 L194 190 L206 184 L184 124 C181 94 175 75 165 69 L148 59 L148 45" />
+          <path data-body-front d="M123 44 Q135 51 148 45 M120 57 Q131 70 149 59 M96 82 Q111 83 124 89 M142 88 Q151 81 163 82 M132 86 L133 116 M115 130 Q131 136 148 129 M108 164 Q132 174 153 162 M108 192 Q122 190 134 208 M150 192 Q141 197 134 208 M88 262 L102 263 M151 264 L169 261 M79 301 L72 317 L94 319 L96 306 M155 306 L156 318 L181 316 L170 302" />
+        <path data-body-back visibility="hidden" d="M134 57 L134 174 M99 78 Q112 72 125 89 L119 111 M167 78 Q154 72 142 89 L148 111 M107 160 Q134 175 159 160 M99 192 Q115 206 133 195 Q150 207 164 191"/></g>
+        <g opacity=".2" stroke="currentColor" stroke-width=".7"><path d="M20 83 H256 M20 167 H256 M20 260 H256 M134 0 V330" stroke-dasharray="2 5"/><circle cx="134" cy="167" r="119"/></g>
+        <g data-body-hotspots></g>
+        <rect data-booking-marker x="0" y="0" width="0" height="0" rx="5" fill="currentColor" fill-opacity=".24" stroke="currentColor" pointer-events="none"/>
+
+      </svg>
+      <div class="booking-study-notes"><span>INK / FORM / YOU</span><span data-booking-size-label>SIZE TO BE DECIDED</span></div>
+    </div>
+<div class="placement-controls"><p class="placement-prompt">Tap up to five areas on the figure.</p><div class="selected-regions" data-selected-regions aria-live="polite"></div>
+        <fieldset class="booking-choice-set" data-booking-choice="size"><legend>SIZE FOR <span data-active-region>CHOOSE AN AREA</span></legend><div class="booking-size-options">
+          <button type="button" class="booking-choice" data-value="Small" aria-pressed="false"><span class="booking-size-glyph size-small" aria-hidden="true"></span><span>Small<small data-size-note="Small">Choose a body area</small></span></button>
+          <button type="button" class="booking-choice" data-value="Medium" aria-pressed="false"><span class="booking-size-glyph size-medium" aria-hidden="true"></span><span>Medium<small data-size-note="Medium">Choose a body area</small></span></button>
+          <button type="button" class="booking-choice" data-value="Large" aria-pressed="false"><span class="booking-size-glyph size-large" aria-hidden="true"></span><span>Large<small data-size-note="Large">Choose a body area</small></span></button>
+        </div></fieldset><p class="placement-caption" data-placement-caption>Each area gets its own size and example price.</p></div></div>
+        <p class="booking-price-note" data-booking-price>Choose a size to see an example price guide.</p>
+      </div>
+
+      <div class="booking-step" data-booking-step="2" hidden>
+        <h3 tabindex="-1">Make time for it.</h3>
+        <p class="booking-step-intro">Your first consultation is free. Pick a sample time or arrange it later.</p>
+        <fieldset class="booking-choice-set booking-calendar" data-booking-choice="date"><legend>A DAY THAT WORKS</legend>
+          <div class="calendar-toolbar"><button type="button" data-calendar-prev aria-label="Previous month">PREV</button><h4 data-booking-month aria-live="polite"></h4><button type="button" data-calendar-next aria-label="Next month">NEXT</button></div>
+          <div class="calendar-weekdays" aria-hidden="true"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+          <div class="booking-date-options" data-booking-dates></div>
+        </fieldset>
+        <fieldset class="booking-choice-set" data-booking-choice="time"><legend>CONSULTATION TIMES / STUDIO LOCAL TIME</legend><p class="time-caption" data-time-caption aria-live="polite"></p><div class="booking-time-options" data-booking-times></div></fieldset>
+        <p class="availability-note">Demo availability. Shaded times are booked and cannot be selected. Each consultation lasts 45 minutes.</p>
+        <button type="button" class="booking-skip-time" data-skip-time>Arrange a time later</button><div class="booking-session-note"><span class="booking-note-symbol" aria-hidden="true">+</span><p>A first conversation gives your artist time to hear your idea, discuss placement and plan your piece.<small>Sample availability. No appointment is reserved.</small></p></div>
+      </div>
+
+      <div class="booking-step" data-booking-step="3" hidden>
+        <h3 tabindex="-1">Tell us the first version.</h3>
+        <p class="booking-step-intro">Tell us as much or as little as you like. There is no pressure to book a tattoo.</p>
+        <p data-contact-artist></p><dl class="booking-review" data-booking-review></dl>
+        <div class="booking-input-pair"><label>Your name<input name="name" autocomplete="name" maxlength="80" placeholder="Name" required /></label><label>Your email<input name="email" type="email" autocomplete="email" maxlength="180" placeholder="you@example.com" required /></label></div>
+        <label class="booking-idea-label">Your idea<textarea name="idea" rows="3" maxlength="1500" placeholder="What would you love to make? Any references or details?" ></textarea></label>
+        <div class="reference-upload"><label for="reference-image-input">Add a reference picture <span>(optional)</span></label><p>Show us the subject, placement or style you have in mind.</p><input id="reference-image-input" data-reference-input type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="reference-help" /><p id="reference-help">JPG, PNG or WebP. Up to 10 MB. Preview stays on your device.</p><p data-reference-feedback role="alert"></p><figure data-reference-preview hidden><img data-reference-image alt="Your chosen tattoo reference" /><figcaption data-reference-name></figcaption><button type="button" data-reference-remove>Remove picture</button></figure></div>
+        <p class="booking-private-note">This is a working concept. Your details stay on this page and disappear when you reload it.</p>
+      </div>
+
+      <p class="booking-feedback" data-booking-feedback role="status" aria-live="polite"></p>
+      <div class="booking-actions"><button class="booking-back" type="button" data-booking-back hidden>Back</button><button class="booking-next" type="button" data-booking-next><span data-booking-next-label>CHOOSE THE PLACEMENT</span><span aria-hidden="true">GO</span></button></div>
+    </form>
+
+    <div class="booking-complete" data-booking-complete hidden>
+      <p class="eyebrow">YOUR SESSION / CONCEPT PREVIEW</p><h3 tabindex="-1">THERE'S ROOM<br /><em>FOR YOUR IDEA.</em></h3>
+      <p data-booking-confirmation></p><dl class="booking-review" data-booking-final-review></dl>
+      <p class="booking-demo-confirm">This was a demo. No booking was made. Your information has not been sent or saved.</p>
+      <button type="button" class="booking-edit" data-booking-edit>EDIT MY SESSION</button>
+    </div>
+    <p class="booking-demo-label">CONCEPT BY PEAKVISION / FICTIONAL STUDIO<br />Prices, artists and availability are examples.</p>
+    <noscript><p class="booking-noscript">Enable JavaScript to explore the appointment planner. This concept does not accept real bookings.</p></noscript>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+      <a class="wordmark footer-mark" href="#top"><span class="door-mark" aria-hidden="true"><i></i></span><span>ROOM<span class="slash">/</span>01</span></a>
+      <p>FICTIONAL STUDIO / CONCEPT BY PEAKVISION</p>
+      <a href="#top">BACK TO THE ENTRANCE</a>
+    </footer>
+    <script src="assets/stone-geometry.js"></script>
+    <script src="stone-fracture.js"></script>
+    <script src="script.js?v=20261002a"></script>
+    <script src="booking-experience.js?v=20260929c"></script>
+  </body>
+</html>
