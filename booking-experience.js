@@ -157,7 +157,8 @@
     $('[data-booking-back]').hidden=mode==='quick'||index===0;
     $('[data-booking-feedback]').textContent='';
     update();
-    if(window.matchMedia('(max-width:760px)').matches)window.scrollTo({top:section.offsetTop,behavior:'auto'});
+    // Only on a visitor's own step change; the silent setup call on page load must not jump phones to booking.
+    if(focus&&window.matchMedia('(max-width:760px)').matches)window.scrollTo({top:section.offsetTop,behavior:'auto'});
     if(focus)steps[index].querySelector('h3').focus({preventScroll:true});
   }
   function setMode(next,focus=true){
