@@ -642,7 +642,7 @@ h1, h2, p { margin-top: 0; }
 .entry-portal { position:absolute; z-index:2; inset:0; pointer-events:none; opacity:var(--entry-opacity,0); }
 .stone-canvas { opacity:var(--stone-fade,1) !important; }
 /* Entrance scene: one canvas per scene (see createScene in script.js). */
-.entry-scene-host { position:absolute; inset:0; overflow:hidden; background:#8d8c88; }
+.entry-scene-host { position:absolute; inset:0; overflow:hidden; background:transparent; }
 .entry-scene-canvas { position:absolute; inset:0; width:100%; height:100%; display:block; opacity:0; transition:opacity .4s ease; }
 .entry-scene-host.is-ready .entry-scene-canvas { opacity:1; }
 .entry-portal .entry-scene-host { background:transparent; }
@@ -713,10 +713,10 @@ body, .cover-stage { background:var(--page-grain); background-attachment:fixed; 
 .cover-door { position:absolute; inset:0; background:var(--page-grain); will-change:transform; }
 .cover-door-left { clip-path:inset(0 50% 0 0); transform:translateX(calc(var(--door,0) * -50.5%)); }
 .cover-door-right { clip-path:inset(0 0 0 50%); transform:translateX(calc(var(--door,0) * 50.5%)); }
-/* Seam line and a soft shadow on each door's opening edge give the panels thickness. */
-.cover-door::after { content:""; position:absolute; top:0; bottom:0; width:60px; pointer-events:none; }
-.cover-door-left::after { left:calc(50% - 60px); background:linear-gradient(90deg,transparent,rgba(17,18,17,.14)); border-right:1px solid var(--ink); }
-.cover-door-right::after { left:50%; background:linear-gradient(270deg,transparent,rgba(17,18,17,.14)); border-left:1px solid var(--ink); }
+/* A very soft edge on each half, no hard line, so the doors simply glide apart. */
+.cover-door::after { content:""; position:absolute; top:0; bottom:0; width:140px; pointer-events:none; }
+.cover-door-left::after { left:calc(50% - 140px); background:linear-gradient(90deg,transparent,rgba(17,18,17,.04)); }
+.cover-door-right::after { left:50%; background:linear-gradient(270deg,transparent,rgba(17,18,17,.04)); }
 /* Storefront behind the doors settles from soft focus and a 6% zoom to sharp. */
 .entry-portal .entry-scene-canvas { filter:blur(var(--focus-blur,0px)); transform:scale(var(--focus-scale,1)); }
 @media (prefers-reduced-motion:reduce) { .cover-door { display:none; } }

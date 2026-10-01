@@ -145,11 +145,11 @@
   const SCENE={aspect:2688/1520,wallAspect:2560/1276,wallStartW:.481,wallStartY:.525,wallEndFill:.8,
     glass:[[395,1030],[1659,2300]],glassY:[149,1278],door:[1092,1587],src:2688};
   const ARTISTS={
-    NOVA:{name:'Nova',index:'FIG. 04 / NOVA',style:'Fine line. Ornamental.',note:'Botanical forms, delicate detail and a little negative space.',portrait:'assets/artist-portrait.webp',portraitAlt:'Fictional tattoo artist Nova with tattoos on her arms',flash:'assets/nova-flash.png',flashAlt:'AI concept tattoo flash for Nova with botanical and ornamental designs',rect:[.2488,.0768,.102,.2751]},
-    HIRO:{name:'Hiro',index:'FIG. 05 / HIRO',style:'Blackwork. Illustrative.',note:'Bold silhouettes, deep black and stories drawn on skin.',portrait:'assets/artist-hiro.webp',portraitAlt:'Fictional tattoo artist Hiro with neck and arm tattoos',flash:'assets/hiro-flash.png',flashAlt:'AI concept tattoo flash for Hiro with bold blackwork and illustrative designs',rect:[.7957,.0204,.102,.2751]}
+    NOVA:{name:'Nova',index:'FIG. 04 / NOVA',style:'Fine line. Ornamental.',note:'Botanical forms, delicate detail and a little negative space.',portrait:'assets/artist-portrait.webp',portraitAlt:'Fictional tattoo artist Nova with tattoos on her arms',flash:'assets/nova-flash.png',flashAlt:'AI concept tattoo flash for Nova with botanical and ornamental designs',rect:[.1406,.2586,.1629,.4397]},
+    HIRO:{name:'Hiro',index:'FIG. 05 / HIRO',style:'Blackwork. Illustrative.',note:'Bold silhouettes, deep black and stories drawn on skin.',portrait:'assets/artist-hiro.webp',portraitAlt:'Fictional tattoo artist Hiro with neck and arm tattoos',flash:'assets/hiro-flash.png',flashAlt:'AI concept tattoo flash for Hiro with bold blackwork and illustrative designs',rect:[.6965,.2586,.1629,.4397]}
   };
   const ease=t=>t<.5?2*t*t:1-(-2*t+2)**2/2;
-  const SCENE_V='20261002a';
+  const SCENE_V='20261002b';
   const sceneImages=Object.fromEntries(['facade','wall','room'].map(name=>{const img=new Image();img.decoding='async';img.src=`assets/scene/${name}.webp?v=${SCENE_V}`;return [name,img];}));
   const sceneReady=Promise.all(Object.values(sceneImages).map(img=>img.decode().catch(()=>{})));
   function createScene(host,interactive){
@@ -169,23 +169,26 @@
       // Landscape: storefront covers the screen. Portrait: door centred, windows
       // run off the sides, page colour above and below.
       const Wc=vw/vh>=1?Math.max(vw,vh*SCENE.aspect):vw*1.5,Hc=Wc/SCENE.aspect,P=Wc;
-      // Landscape stops with floor and ceiling in view; portrait lets the wall run
-      // slightly past the screen edges so the two frames stay big enough to tap.
-      const fill=vw/vh>=1?SCENE.wallEndFill:1.1,r=SCENE.wallStartW*Wc/(fill*Math.min(Wc,vw));
+      // Landscape stops with floor and ceiling in view; portrait fits the whole wall
+      // edge to edge (the artist frames are large enough to tap at that size).
+      const fill=vw/vh>=1?SCENE.wallEndFill:0.98,r=SCENE.wallStartW*Wc/(fill*Math.min(Wc,vw));
       const Dw=Math.max(1.6*P,1.12*P/(1-r)-P),k0=P/(P+Dw),cEnd=(P+Dw)*(1-r);
       const Dr=Dw*1.35+.5*P,kr0=P/(P+Dr),coverEnd=Math.max(vw,vh*SCENE.aspect)*1.04;
       const roomW=Math.max(Wc/kr0,coverEnd*(P+Dr-cEnd)/P,vh*SCENE.aspect/kr0);
       const wallW=SCENE.wallStartW*Wc/k0;
-      g={vw,vh,ratio,Wc,Hc,P,Dw,Dr,cEnd,roomW,wallW,wallY:(SCENE.wallStartY-.5)*Hc/k0,
-        paper:getComputedStyle(document.documentElement).getPropertyValue('--paper').trim()||'#d8d8d4'};
+      g={vw,vh,ratio,Wc,Hc,P,Dw,Dr,cEnd,roomW,wallW,wallY:(SCENE.wallStartY-.5)*Hc/k0};
       dirty=true;draw();
     }
     function draw(){
       if(!g||!ready)return;
-      const {vw,vh,ratio,Wc,Hc,P,Dw,Dr,cEnd,roomW,wallW,wallY,paper}=g;
+      const {vw,vh,ratio,Wc,Hc,P,Dw,Dr,cEnd,roomW,wallW,wallY}=g;
       const progress=last,c=cEnd*ease(progress),cx=vw/2,cy=vh/2;
       ctx.setTransform(ratio,0,0,ratio,0,0);ctx.imageSmoothingQuality='high';
       ctx.clearRect(0,0,vw,vh);
+      // While the storefront is in view everything is drawn inside its photo only; on tall
+      // screens the page grain shows above and below it (the same grain as the doors).
+      const kf0=P/(P-c),clipF=c<.95*P;
+      if(clipF){ctx.save();ctx.beginPath();ctx.rect(cx-Wc*kf0/2,cy-Hc*kf0/2,Wc*kf0,Hc*kf0);ctx.clip();}
       ctx.fillStyle='#8d8c88';ctx.fillRect(0,0,vw,vh);
       const kr=P/(P+Dr-c),rw=roomW*kr,rh=rw/SCENE.aspect;
       ctx.drawImage(sceneImages.room,cx-rw/2,cy-rh/2,rw,rh);
@@ -197,8 +200,6 @@
         ctx.save();ctx.globalAlpha=1-clamp((c/P-.86)/.09,0,1);
         drawDoor(c,P,cx,cy,Wc,Hc);
         ctx.drawImage(sceneImages.facade,fx,fy,fw,fh);
-        // page colour above and below the photo on tall screens (hides the room)
-        ctx.fillStyle=paper;if(fy>0)ctx.fillRect(0,0,vw,fy+.5);if(fy+fh<vh)ctx.fillRect(0,fy+fh-.5,vw,vh-fy-fh+.5);
         ctx.fillStyle='rgba(255,255,255,.07)';
         SCENE.glass.forEach(([a,b])=>ctx.fillRect(fx+a*u,fy+SCENE.glassY[0]*u,(b-a)*u,(SCENE.glassY[1]-SCENE.glassY[0])*u));
         ctx.fillStyle='rgba(255,255,255,.92)';ctx.textAlign='center';ctx.textBaseline='middle';
@@ -206,6 +207,7 @@
         ctx.fillText('TATTOO',fx+fw*.272,fy+fh*.447);ctx.fillText('STUDIO',fx+fw*.736,fy+fh*.447);
         ctx.restore();
       }
+      if(clipF)ctx.restore();
       if(interactive){
         buttons.forEach(b=>{const [l,t,w,h]=ARTISTS[b.dataset.artist].rect;
           b.style.cssText=`left:${wx+l*ww}px;top:${wy+t*wh}px;width:${w*ww}px;height:${h*wh}px`;});
@@ -245,19 +247,16 @@
   // Floating artist card: native <dialog> gives Esc, focus trap and focus return.
   const dialog=document.querySelector('.artist-card-dialog');
   if(dialog&&filmScene){
-    const card=dialog.querySelector('[data-artist-card]'),q=sel=>dialog.querySelector(sel);
+    const q=sel=>dialog.querySelector(sel);
     let current=null;
     filmScene.buttons.forEach(button=>button.addEventListener('click',()=>{
-      const a=ARTISTS[button.dataset.artist];current=a;card.classList.remove('is-flipped');
+      const a=ARTISTS[button.dataset.artist];current=a;
       q('[data-card-portrait]').src=a.portrait;q('[data-card-portrait]').alt=a.portraitAlt;
       q('[data-card-index]').textContent=a.index;q('[data-card-name]').textContent=a.name;
       q('[data-card-style]').textContent=a.style;q('[data-card-note]').textContent=a.note;
-      q('[data-card-studies]').textContent=`STUDIES BY ${a.name.toUpperCase()}`;q('[data-card-style-back]').textContent=a.style;
-      q('[data-card-flash]').src=a.flash;q('[data-card-flash]').alt=a.flashAlt;
       q('[data-card-choose]').textContent=`CHOOSE ${a.name.toUpperCase()}`;
       dialog.showModal();
     }));
-    dialog.querySelectorAll('[data-card-flip]').forEach(b=>b.addEventListener('click',()=>card.classList.toggle('is-flipped')));
     dialog.querySelectorAll('[data-card-close]').forEach(b=>b.addEventListener('click',()=>dialog.close()));
     dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
     q('[data-card-choose]').addEventListener('click',event=>{

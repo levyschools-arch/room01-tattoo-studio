@@ -396,3 +396,8 @@
  .placement-prompt,.placement-caption,.booking-price-note { font-size:7px; }
  .region-chip-select { padding:4px; }
 }
+/* Phones: the calendar keeps its natural height instead of being squeezed to fit the screen
+   (it shrank to 0 on short phones and drew on top of the times); the step scrolls inside instead. */
+@media (max-width: 760px) {
+  .booking-step[data-booking-step="2"] { grid-template-rows: auto auto auto auto auto; align-content: start; overflow-y: auto; overscroll-behavior: contain; }
+}
