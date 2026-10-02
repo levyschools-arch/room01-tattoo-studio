@@ -689,7 +689,7 @@ h1, h2, p { margin-top: 0; }
 :root { --page-grain:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.32'/></svg>"),
     radial-gradient(120% 90% at 18% 12%, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 48%, rgba(0,0,0,.07) 100%),
-    url("assets/concrete-tile.webp?v=20261002a") 0 0 / 528px auto repeat; }
+    url("assets/concrete-tile.webp?v=20261002b") 0 0 / 520px auto repeat; }
 html { background:#d8d8d4; }
 body, .cover-stage { background:var(--page-grain); background-attachment:fixed; }
 .sculpture-art, .entry-film, .entry-film-sticky, .booking.booking-experience { background-color:transparent; }
