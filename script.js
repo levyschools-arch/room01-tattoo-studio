@@ -198,7 +198,9 @@
       if(c<.95*P){
         const kf=P/(P-c),fw=Wc*kf,fh=Hc*kf,fx=cx-fw/2,fy=cy-fh/2,u=fw/SCENE.src;
         ctx.save();ctx.globalAlpha=1-clamp((c/P-.86)/.09,0,1);
-        drawDoor(c,P,cx,cy,Wc,Hc);
+        // the open door is almost edge-on by the time the camera reaches the doorway, and its far
+        // edge read as a black pole sweeping across the room; it fades out before that point
+        ctx.save();ctx.globalAlpha*=1-clamp((c/P-.5)/.22,0,1);drawDoor(c,P,cx,cy,Wc,Hc);ctx.restore();
         ctx.drawImage(sceneImages.facade,fx,fy,fw,fh);
         ctx.fillStyle='rgba(255,255,255,.07)';
         SCENE.glass.forEach(([a,b])=>ctx.fillRect(fx+a*u,fy+SCENE.glassY[0]*u,(b-a)*u,(SCENE.glassY[1]-SCENE.glassY[0])*u));
