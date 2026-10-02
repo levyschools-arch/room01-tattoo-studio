@@ -145,11 +145,11 @@
   const SCENE={aspect:2688/1520,wallAspect:2560/1276,wallStartW:.481,wallStartY:.525,wallEndFill:.8,
     glass:[[395,1030],[1659,2300]],glassY:[149,1278],door:[1092,1587],src:2688};
   const ARTISTS={
-    NOVA:{name:'Nova',index:'FIG. 04 / NOVA',style:'Fine line. Ornamental.',note:'Botanical forms, delicate detail and a little negative space.',portrait:'assets/artist-portrait.webp',portraitAlt:'Fictional tattoo artist Nova with tattoos on her arms',flash:'assets/nova-flash.png',flashAlt:'AI concept tattoo flash for Nova with botanical and ornamental designs',rect:[.1406,.2586,.1629,.4397]},
-    HIRO:{name:'Hiro',index:'FIG. 05 / HIRO',style:'Blackwork. Illustrative.',note:'Bold silhouettes, deep black and stories drawn on skin.',portrait:'assets/artist-hiro.webp',portraitAlt:'Fictional tattoo artist Hiro with neck and arm tattoos',flash:'assets/hiro-flash.png',flashAlt:'AI concept tattoo flash for Hiro with bold blackwork and illustrative designs',rect:[.6965,.2586,.1629,.4397]}
+    NOVA:{name:'Nova',index:'FIG. 04 / NOVA',style:'Fine line. Ornamental.',note:'Botanical forms, delicate detail and a little negative space.',portrait:'assets/artist-portrait.webp',portraitAlt:'Fictional tattoo artist Nova with tattoos on her arms',flash:'assets/nova-flash.png',flashAlt:'AI concept tattoo flash for Nova with botanical and ornamental designs',rect:[.1348,.2351,.1629,.4397]},
+    HIRO:{name:'Hiro',index:'FIG. 05 / HIRO',style:'Blackwork. Illustrative.',note:'Bold silhouettes, deep black and stories drawn on skin.',portrait:'assets/artist-hiro.webp',portraitAlt:'Fictional tattoo artist Hiro with neck and arm tattoos',flash:'assets/hiro-flash.png',flashAlt:'AI concept tattoo flash for Hiro with bold blackwork and illustrative designs',rect:[.7023,.2351,.1629,.4397]}
   };
   const ease=t=>t<.5?2*t*t:1-(-2*t+2)**2/2;
-  const SCENE_V='20261002b';
+  const SCENE_V='20261002c';
   const sceneImages=Object.fromEntries(['facade','wall','room'].map(name=>{const img=new Image();img.decoding='async';img.src=`assets/scene/${name}.webp?v=${SCENE_V}`;return [name,img];}));
   const sceneReady=Promise.all(Object.values(sceneImages).map(img=>img.decode().catch(()=>{})));
   function createScene(host,interactive){
