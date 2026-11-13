@@ -1,7 +1,9 @@
 # ROOM/01
 
-A fictional tattoo studio concept by Peakvision: a sculpture that breaks apart on scroll, a walk through the studio door to the flash wall, the two artists on that wall, and a free-consultation booking planner.
+ROOM/01 is a fictional tattoo studio concept by Peakvision. The page moves through a studio entrance, a flash wall and a consultation planner.
 
-Artists, prices and availability are examples. The booking planner is a local demo and sends nothing.
+![ROOM/01 website concept preview](og.jpg)
 
-Static site, no build step. Open `index.html`, or serve the folder with any static server.
+The artists, prices and availability are examples. The planner runs locally in the browser and does not send a booking.
+
+This is a static site with no build step. Open `index.html`, or serve the folder with any static server. [See Peakvision](https://peakvision.digital/) for website work.
